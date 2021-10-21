@@ -16,27 +16,18 @@ window.addEventListener('DOMContentLoaded', () => {
     close.addEventListener('click', () => {
         menu.classList.toggle('first-page-hidden');
         menu.classList.toggle('first-page-visible');
-        // second_page.classList.toggle('second-page-visible')
-        // second_page.classList.toggle('second-page-hidden')
-        // third_page.classList.toggle('third-page-visible')
-        // third_page.classList.toggle('third-page-hidden')
-        second_page.classList.add('second-page-hidden')
-        third_page.classList.add('third-page-hidden')
+        second_page.classList.toggle('second-page-visible')
+        third_page.classList.toggle('third-page-visible')
     });
-
 
     services.addEventListener('click', () => {
         second_page.classList.toggle('second-page-visible')
-        second_page.classList.toggle('second-page-hidden')
-
-
     });
     second_page_back.addEventListener('click', () => {
         second_page.classList.toggle('second-page-visible');
         second_page.classList.toggle('second-page-hidden');
     });
     cloud_calculations.addEventListener('click', () => {
-        third_page.classList.toggle('third-page-hidden')
         third_page.classList.toggle('third-page-visible')
     });
     third_page_heading.addEventListener('click', () => {

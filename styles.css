@@ -12,15 +12,21 @@ li{
 .first-page {
     visibility: hidden;
     position: absolute;
-    /*border: 1px solid black;*/
-    width: 360px;
-    height: 640px;
     background-color: white;
     opacity: 1;
+    width: 360px;
+    height: 640px;
     top: 0;
-    left: 0;
-    z-index: 1;
-
+    left: -100%;
+    z-index: 3;
+}
+.first-page-visible{
+    visibility: visible;
+    position: absolute;
+    top: 0;
+    left: -50%;
+    transform: translateX(200%);
+    transition: all 1.5s ease 0s;
 }
 .header-container {
     position: fixed;
@@ -37,7 +43,6 @@ li{
     float: right;
     position: relative;
     z-index: 1;
-
 }
 .header_button_language {
     width: 96px;
@@ -93,66 +98,32 @@ li{
     line-height: 32px;
     margin-bottom: 20px;
 }
-.first-page-hidden{
-    z-index: 5;
+
+.second-page{
     visibility: hidden;
     position: absolute;
-    top: 0;
-    left: -100%;
-    transform: translateX(-200%);
-    transition: all 1.5s ease 0s;
-
-}
-.first-page-visible{
-    position: absolute;
-    top: 0;
-    visibility: visible;
-    left: -50%;
-    transform: translateX(200%);
-    transition: all 1.5s ease 0s;
-
-}
-.second-page{
     background-color: white;
     opacity: 1;
     width: 360px;
     height: 540px;
-    position: absolute;
     top: 100px;
-    left: 0;
+    left: -50%;
     z-index: 10;
-    visibility: hidden;
-}
-.second-page-visible{
-    visibility: visible;
-    position: absolute;
-    top: 100px;
-    left: -50%;
-    transform: translateX(200%);
-    transition: all 1.5s ease 0s;
-
-}
-.second-page-hidden{
-    visibility: hidden;
-    position: absolute;
-    top: 100px;
-    left: -50%;
     transform: translateX(-200%);
     transition: all 1.5s ease 0s;
 }
+.second-page-visible{
+    visibility: visible;
+    transform: translateX(200%);
+    transition: all 1.5s ease 0s;
+}
+
 .second-page-heading, .third-page-heading {
     padding-left: 30px;
-    list-style: none;
     font: 500 22px 'Golos Text';
     line-height: 32px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     background: no-repeat 10px/16px url("images/arrow-left_icon.png");
-}
-.third-page-heading:after {
-    content: '';
-    background-color: blue;
-    width: 360px;
-    height: 1px;
 }
 .second-page-list-item {
     padding-left: 30px;
@@ -162,15 +133,18 @@ li{
     background: no-repeat 300px/16px url("images/arrow-right_icon.png");
 }
 .third-page {
+    visibility: hidden;
+    position: absolute;
     background-color: white;
     opacity: 1;
     width: 360px;
     height: 540px;
-    position: absolute;
     top: 100px;
     left: 0;
     z-index: 15;
-    visibility: hidden;
+    transform: translateX(-200%);
+    transition: all 1.5s ease 0s;
+
 }
 .third-page-visible{
     visibility: visible;
@@ -180,14 +154,7 @@ li{
     transform: translateX(200%);
     transition: all 1.5s ease 0s;
 }
-.third-page-hidden{
-    visibility: hidden;
-    position: absolute;
-    top: 100px;
-    left: -50%;
-    transform: translateX(-200%);
-    transition: all 1.5s ease 0s;
-}
+
 .third-page-list-item {
     font: 400 16px 'Golos Text';
     line-height: 24px;
@@ -199,4 +166,11 @@ li{
     line-height: 20px;
     color: #577188;
     margin-top: 10px;
+}
+.scroll{
+    overflow-y: scroll;
+    width: 360px;
+    height: 540px;
+    border-top: 1px solid #C6D6E5;
+    padding-top: 30px;
 }
