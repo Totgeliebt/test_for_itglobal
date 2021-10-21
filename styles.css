@@ -2,13 +2,22 @@
     margin: 0;
     padding: 0;
 }
-body{
+
+body {
     width: 360px;
     position: relative;
 }
-li{
+
+li {
     list-style: none;
 }
+
+li:hover, li:focus, .second-page-heading:hover, .third-page-heading:hover {
+    cursor: pointer;
+    border-bottom: 1px solid #1D7DED;
+    width: 60%;
+}
+
 .first-page {
     visibility: hidden;
     position: absolute;
@@ -20,7 +29,8 @@ li{
     left: -100%;
     z-index: 3;
 }
-.first-page-visible{
+
+.first-page-visible {
     visibility: visible;
     position: absolute;
     top: 0;
@@ -28,33 +38,47 @@ li{
     transform: translateX(200%);
     transition: all 1.5s ease 0s;
 }
+
 .header-container {
-    position: fixed;
+    position: relative;
     box-sizing: border-box;
     justify-content: space-between;
     width: 360px;
     height: 50px;
     display: flex;
+    top: 20px;
     align-items: center;
     padding: 10px;
 }
+
 .hamburger-button {
     margin: 10px;
     float: right;
     position: relative;
     z-index: 1;
 }
+
+.hamburger-button:hover, .hamburger-button:focus {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
 .header_button_language {
     width: 96px;
     height: 32px;
-    position: relative;
+    position: absolute;
     padding-left: 10px;
+    margin-bottom: 40px;
 }
-.header_button_language:hover {
+
+.header_button_language:hover, .header_button_language:focus {
     background-color: rgba(29, 125, 237, 0.1);
     border: 1px solid rgba(131, 188, 255, 0.5);
     border-radius: 2px;
+    cursor: pointer;
 }
+
 .header_button_language-arrow {
     background: no-repeat url("images/arrow-down_icon.png");
     position: absolute;
@@ -64,42 +88,56 @@ li{
     top: 8px;
     right: 6px;
 }
+
 .header_button_language-text {
     font: 500 22px 'Golos Text';
     line-height: 32px;
     padding-left: 5px;
 
 }
+
 .header_button_language-icon {
     width: 18px;
     height: 18px;
     border-radius: 50%;
 }
+
 .header-icon-close {
+    position: relative;
+    top: -20px;
     width: 25px;
     height: 25px;
+}
+
+.header-icon-close:hover {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
 }
 
 .main-content-list {
     margin: 100px 0 100px 23px;
 
 }
-.main-content-list-item{
+
+.main-content-list-item {
     font: 500 22px 'Golos Text';
     line-height: 32px;
     margin-bottom: 20px;
     background: no-repeat 300px/16px url("images/arrow-right_icon.png");
 }
+
 .footer-content-list {
     margin: 200px 0 100px 23px;
 }
+
 .footer-content-list-item {
     font: 500 22px 'Golos Text';
     line-height: 32px;
     margin-bottom: 20px;
 }
 
-.second-page{
+.second-page {
     visibility: hidden;
     position: absolute;
     background-color: white;
@@ -108,11 +146,12 @@ li{
     height: 540px;
     top: 100px;
     left: -50%;
-    z-index: 10;
+    z-index: 5;
     transform: translateX(-200%);
     transition: all 1.5s ease 0s;
 }
-.second-page-visible{
+
+.second-page-visible {
     visibility: visible;
     transform: translateX(200%);
     transition: all 1.5s ease 0s;
@@ -125,13 +164,15 @@ li{
     margin-bottom: 30px;
     background: no-repeat 10px/16px url("images/arrow-left_icon.png");
 }
+
 .second-page-list-item {
-    padding-left: 30px;
+    margin-left: 30px;
     font: 400 18px 'Golos Text';
     line-height: 30px;
     margin-bottom: 20px;
     background: no-repeat 300px/16px url("images/arrow-right_icon.png");
 }
+
 .third-page {
     visibility: hidden;
     position: absolute;
@@ -141,12 +182,13 @@ li{
     height: 540px;
     top: 100px;
     left: 0;
-    z-index: 15;
+    z-index: 7;
     transform: translateX(-200%);
     transition: all 1.5s ease 0s;
 
 }
-.third-page-visible{
+
+.third-page-visible {
     visibility: visible;
     position: absolute;
     top: 100px;
@@ -158,19 +200,77 @@ li{
 .third-page-list-item {
     font: 400 16px 'Golos Text';
     line-height: 24px;
-    margin-left: 27px;
-    margin-bottom: 35px;
+    margin: 0 10px 35px 27px;
+
 }
+
 .third-page-list-text {
     font: 400 12px 'Golos Text';
     line-height: 20px;
     color: #577188;
     margin-top: 10px;
 }
-.scroll{
+
+.scroll {
     overflow-y: scroll;
     width: 360px;
     height: 540px;
     border-top: 1px solid #C6D6E5;
     padding-top: 30px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    z-index: 100;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 180px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+
+}
+
+.show {
+    display: block;
+}
+
+.countries {
+    font: 600 14px 'Golos Text';
+    line-height: 24px;
+    padding: 8px 0 8px 17px;
+
+}
+
+.choice {
+    font: 400 14px 'Golos Text';
+    line-height: 24px;
+    padding: 8px 0 8px 30px;
+}
+
+.us {
+    background: no-repeat 5px/16px url("images/us_icon.png");
+}
+
+.neth {
+    background: no-repeat 5px/16px url("images/netherlands_icon.png");
+}
+
+.bel {
+    background: no-repeat 5px/16px url("images/belarus_icon.png");
+}
+
+.rus {
+    background: no-repeat 5px/16px url("images/russia_icon.png");
+}
+
+.kaz {
+    background: no-repeat 5px/16px url("images/kazakhstan_icon.png");
+}
+
+.tur {
+    background: no-repeat 5px/16px url("images/turkey_icon.png");
 }
