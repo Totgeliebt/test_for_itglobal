@@ -222,16 +222,15 @@ li:hover, li:focus, .second-page-heading:hover, .third-page-heading:hover {
 .dropdown {
     position: relative;
     display: inline-block;
-    z-index: 100;
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f1f1f1;
+    z-index: 100;
+    background-color: white;
     min-width: 180px;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-
 }
 
 .show {
@@ -242,15 +241,16 @@ li:hover, li:focus, .second-page-heading:hover, .third-page-heading:hover {
     font: 600 14px 'Golos Text';
     line-height: 24px;
     padding: 8px 0 8px 17px;
-
 }
 
 .choice {
     font: 400 14px 'Golos Text';
     line-height: 24px;
-    padding: 8px 0 8px 30px;
+    padding: 8px 42px 8px 30px;
 }
-
+.choice:hover {
+    background-color: #F1F8FE;
+}
 .us {
     background: no-repeat 5px/16px url("images/us_icon.png");
 }
